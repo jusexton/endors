@@ -1,5 +1,7 @@
 # Endors
 
+Warning: Endors is not production ready and currently has a very unstable API. Use are your own risk.
+
 Validation framework written in the rust programming language.
 
 ## Quick Look
