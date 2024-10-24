@@ -1,7 +1,11 @@
 [package]
 name = "endors"
+description = "Validation library"
 version = "0.1.0"
 edition = "2021"
+homepage = "https://github.com/jusexton/endors/"
+repository = "https://github.com/jusexton/endors/"
+readme = "README.md"
 
 [dependencies]
 thiserror = "1.0.65"
