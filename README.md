@@ -17,9 +17,18 @@ impl Validator<&User> for UserValidator {
         // Perform many validations and collect all the results into a single result.
         collect_results!(
             validate!(value.first_name, Len { min: 1, max: 100 }), // Uses default len error message.
-            validate!(value.first_name, |s: &str| s.len() % 2 == 0 => "First name must have an even number of characters."), // Custom error message
-            validate!(value.last_name, NotEqual(value.first_name) => "Last name must not equal first name."),
-            validate!(value.phone_number, IsSome => "Phone number must be provided."),
+            validate!(
+                value.first_name, 
+                |s: &str| s.len() % 2 == 0 => "First name must have an even number of characters." // Custom error message
+            ),
+            validate!(
+                value.last_name, 
+                NotEqual(value.first_name) => "Last name must not equal first name."
+            ),
+            validate!(
+                value.phone_number, 
+                IsSome => "Phone number must be provided."
+            ),
         )
 
         // OR
